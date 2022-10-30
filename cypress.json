@@ -1,0 +1,11 @@
+{
+
+    "report":"mochawesome",
+    "reportOptions":{
+        "charts":true,
+        "overwrite":false,
+        "html":false,
+        "json":true,
+        "reportDir":"cyress/reports/"
+    }
+}
