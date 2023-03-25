@@ -14,7 +14,12 @@ describe("Basic Tests",()=>{
 
      cy.get('input[type="checkbox"]').check(['option2','option3']);  // checks multiple checkbox with on basis of value
     
- 
+    cy.get('#autocomplete').type('india');
+    cy.get('.ui-menu-item div').each(($e1, index, $list) => {
+        if ($e1.text() === 'India') {
+          $e1.trigger('click')
+        }
+      })
  
     })
  
