@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-
+require('@cypress/xpath');
 // checking checkbox
 
 describe("Basic Tests",()=>{
@@ -14,12 +14,17 @@ describe("Basic Tests",()=>{
 
      cy.get('input[type="checkbox"]').check(['option2','option3']);  // checks multiple checkbox with on basis of value
     
+<<<<<<< HEAD
     cy.get('#autocomplete').type('india');
     cy.get('.ui-menu-item div').each(($e1, index, $list) => {
         if ($e1.text() === 'India') {
           $e1.trigger('click')
         }
       })
+=======
+     
+ 
+>>>>>>> 8d3ad0a (xpath plugin added)
  
     })
  
