@@ -6,6 +6,7 @@ describe("Basic Tests",()=>{
 
    
     it("visit the site",function(){
+    
  
      cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
 
