@@ -8,8 +8,8 @@ describe('My First Test', () => {
       
     cy.visit('https://webapp.hucu.us/login');
     cy.get('.fluid > input').click();
-    cy.get('.fluid > input').type('{backspace}');
-    cy.get('.fluid > input').type('{backspace}');
+   //  cy.get('.fluid > input').type('{backspace}');
+   //  cy.get('.fluid > input').type('{backspace}');
     cy.get('.fluid > input').type('qa.test1');
     cy.get('.large').click();
     cy.get('form').submit();
@@ -25,6 +25,8 @@ describe('My First Test', () => {
     cy.get('.pincode-input-text:nth-child(2)').type('1');
     cy.get('.pincode-input-text:nth-child(3)').type('1');
     cy.get('.pincode-input-text:nth-child(4)').type('1');
+
+    cy.wait(5000);
 
     cy.get('.list-header:nth-child(2) > .icon-container > .ui').click().then(()=>{
          // cy.get('.required:nth-child(1) input').click()
@@ -46,7 +48,8 @@ describe('My First Test', () => {
          });
          cy.get('#create-patient-modal:nth-child(1)').
          should('have.text','Patient channel already existsThe patient channel you are trying to create already exists: shah khalid 10/10/2001BackJoin Channel');
-         cy.get('#ui blue button submit-btn').click();
+         // cy.get('#ui blue button submit-btn').should('have.text','Join Channel').click();
+         cy.get('button[normalize-space()="Join Channel"]').click();
 
     }  
     );
