@@ -7,6 +7,7 @@ describe("Basic Tests",()=>{
    
     it("visit the site",function(){
     
+        
  
      cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
 
@@ -23,6 +24,7 @@ describe("Basic Tests",()=>{
         }
       })
       
+      cy.get('#dropdown-class-example').select('Option2');
  
     })
     

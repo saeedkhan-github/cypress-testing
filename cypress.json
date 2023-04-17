@@ -1,5 +1,6 @@
 {
 
+    "chromeWebSecurity": false,
     "report":"mochawesome",
     "reportOptions":{
         "charts":true,
