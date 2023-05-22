@@ -28,7 +28,8 @@ describe('My First Test', () => {
 
     cy.wait(5000);
 
-    cy.get('.list-header:nth-child(2) > .icon-container > .ui').click().then(()=>{
+   //  cy.get('.list-header:nth-child(2) > .icon-container > .ui')
+    cy.get(':nth-child(3) > .icon-container > .add-icon').click().then(()=>{
          // cy.get('.required:nth-child(1) input').click()
         //  cy.get('.ui primary button create_btn').click();
         cy.get('.four > .ui').click();
@@ -49,7 +50,12 @@ describe('My First Test', () => {
          cy.get('#create-patient-modal:nth-child(1)').
          should('have.text','Patient channel already existsThe patient channel you are trying to create already exists: shah khalid 10/10/2001BackJoin Channel');
          // cy.get('#ui blue button submit-btn').should('have.text','Join Channel').click();
-         cy.get('button[normalize-space()="Join Channel"]').click();
+         // cy.get('button[normalize-space()="Join Channel"]').click();
+         cy.get('.blue').click();
+         cy.get('.basic').click();
+         cy.get('.action-button-container > .ui').click();
+         // cy.get('i').should('have.class', 'angle down').click();
+         
 
     }  
     );
