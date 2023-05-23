@@ -9,10 +9,14 @@ describe('Test VoiceClip in the patient channel', () => {
         Login();
         cy.wait(5000);
         cy.get('div.patient-name').contains('John Dav').click();
-        cy.get('.tiny > .ui')
         // cy.get('button.ui tiny icon primary button send-button').click();
+        
+        cy.get('.tiny > .ui').click();
+        cy.log("Recording voice Clip");
         cy.wait(5000);
-        cy.get('button.VoiceClipRecorder_buttonOK__1xIoQ').click();
+        cy.get('.VoiceClipRecorder_buttonOK__1xIoQ > .ui').click();
+        cy.get('.tiny > .ui').click();
+
     })
     
   })
