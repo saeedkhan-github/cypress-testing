@@ -1,9 +1,10 @@
-/// <reference types="cypress"/>
+
+// import { contains } from "cypress/types/jquery";
 import { Login } from "./Login.cy";
 
-describe('Test VoiceClip in the patient channel', () => {
-    it('Sending Voice clip in the patient channel', () => {
-        cy.visit('https://webapp.hucu.us/login');
+describe('Test Bookmark in the patient channel', () => {
+    it('Send a Message in the Channel', () => {
+        
         Login();
         cy.wait(5000);
         cy.get('div.patient-name').contains('John Dav').click();
@@ -13,10 +14,8 @@ describe('Test VoiceClip in the patient channel', () => {
         cy.log("Recording voice Clip");
         cy.wait(5000);
         cy.get('.VoiceClipRecorder_buttonOK__1xIoQ > .ui').click();
-        cy.get('.tiny > .ui').click().then(()=>{
-            cy.get("i[class='play icon']").last().click();
-            });
-        
+        cy.get('.tiny > .ui').click();
+        cy.get("i[class='play icon']").click();
 
     })
     

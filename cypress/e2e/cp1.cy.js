@@ -1,19 +1,31 @@
 /// <reference types="cypress"/>
+import { faker } from '@faker-js/faker';
+
 
 describe("Basic Tests",()=>{
 
    
    it("visit the site",function(){
 
-    cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');
-   //  cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click();
+const birthdate = faker.date.birthdate();
+const month = String(birthdate.getMonth()+1).padStart(2, '0');
+ const bod = `${month}-${String(birthdate.getDate()).padStart(2,'0')}-${birthdate.getFullYear()}`;
 
-   cy.get('.brand').then(function(logo){
+cy.log(bod);
+      
+      // const birthdate = faker.date.birthdate().toLocaleDateString('en-US', {
+      //    month: 'short',
+      //    day: 'numeric',
+      //    year: 'numeric',
+      //  });
+      // cy.log(birthdate);
+      // cy.log(faker.person.sex());
+    
 
-      cy.log(logo.text);
-   })
+      
+    
 
-   cy.get('.brand').should('have.text','GREENKART');
+
 
 
    })
