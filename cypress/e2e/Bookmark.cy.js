@@ -3,20 +3,28 @@
 import { Login } from "./Login.cy";
 
 describe('Test Bookmark in the patient channel', () => {
-    it('Send a Message in the Channel', () => {
+    it('Bookmark a message the patient channel', () => {
         
         Login();
-        cy.wait(5000);
-        cy.get('div.patient-name').contains('John Dav').click();
-        // cy.get('button.ui tiny icon primary button send-button').click();
-        
-        cy.get('.tiny > .ui').click();
-        cy.log("Recording voice Clip");
-        cy.wait(5000);
-        cy.get('.VoiceClipRecorder_buttonOK__1xIoQ > .ui').click();
-        cy.get('.tiny > .ui').click();
-        cy.get("i[class='play icon']").click();
+        cy.wait(8000);
+        cy.get('.search-input > .ui > input').click();
+// cy.get('.ui fluid icon input').click();
+
+cy.get('.search-input > .ui > input').type('Bookmark');
+cy.get('.patient-info').click();
+cy.get("div[class='msg_attachment_style content']").last().find('.text').rightclick().then(()=>{
+    cy.get('span[class="item-text bookmark"]').should('have.text',"Bookmark the Message").click();
+});
+// cy.get('#messageInput').click();
+// cy.get('#messageInput').type('testabc');
+// cy.get('.primary').click();
+// cy.log(cy.get("div[class='msg_attachment_style content']").last().find('.text'));
+// cy.log(el > .text);
+// console.log(el.children);
 
     })
+
+    it('Check the Bookmarked messaged in the right Drawer bookmark tab and remove the bookmakred message')
+    
     
   })
