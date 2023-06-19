@@ -1,10 +1,7 @@
-describe('My First Test', () => {
+describe('Delete a Message', () => {
     it('click on alert',()=>{
         cy.visit('https://webapp.hucu.us/login');
-        //cy.get('.fluid > input').click();
-       //  cy.get('.fluid > input').type('{backspace}');
-       //  cy.get('.fluid > input').type('{backspace}');
-        cy.get('.fluid > input').type('omar');
+        cy.get('.fluid > input').type('emna.fatima');
         cy.get('.large').click();
         cy.get('form').submit();
         cy.get('.icon > input').click();
@@ -21,16 +18,21 @@ describe('My First Test', () => {
         cy.get('.pincode-input-text:nth-child(4)').type('1');
         cy.wait(10000)
 
-        //Add Collaborators
+        //Delete a Message
         cy.get(':nth-child(6) > :nth-child(1) > .content').click()
-        cy.wait(8000)
-        cy.get(':nth-child(1) > .angle').click()
-        cy.get(':nth-child(1) > .list > :nth-child(3)').click()
-        cy.get(':nth-child(3) > .content > .header > .ui').click()
-        cy.get('.actions > .primary').click()
-        cy.wait(8000)
-        cy.get('.actions > .ui').click()
+        cy.wait(5000)
+        // cy.get(':nth-child(4) > .msg_attachment_style').rightclick()
+        // cy.wait(2000)
+        // cy.get('span[class="item-text delete-message"]').click()
+
+
+        //like a message
+        cy.get(':nth-child(6) > .msg_attachment_style > .actions > .reactions-container > :nth-child(1) > .reaction-text').click()
+        //cy.get('span[class="reaction-text"]').click()
+        cy.contains('Like')
+    })
+        
 
     })
   
-  })
+

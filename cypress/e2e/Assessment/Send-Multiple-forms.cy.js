@@ -1,10 +1,7 @@
 describe('My First Test', () => {
     it('click on alert',()=>{
         cy.visit('https://webapp.hucu.us/login');
-        //cy.get('.fluid > input').click();
-       //  cy.get('.fluid > input').type('{backspace}');
-       //  cy.get('.fluid > input').type('{backspace}');
-        cy.get('.fluid > input').type('omar');
+        cy.get('.fluid > input').type('joy');
         cy.get('.large').click();
         cy.get('form').submit();
         cy.get('.icon > input').click();
@@ -21,16 +18,19 @@ describe('My First Test', () => {
         cy.get('.pincode-input-text:nth-child(4)').type('1');
         cy.wait(10000)
 
-        //Add Collaborators
-        cy.get(':nth-child(6) > :nth-child(1) > .content').click()
-        cy.wait(8000)
-        cy.get(':nth-child(1) > .angle').click()
-        cy.get(':nth-child(1) > .list > :nth-child(3)').click()
-        cy.get(':nth-child(3) > .content > .header > .ui').click()
-        cy.get('.actions > .primary').click()
-        cy.wait(8000)
-        cy.get('.actions > .ui').click()
+        //Send Assessment
+        cy.get(':nth-child(5) > :nth-child(1) > .content').click()
+        cy.wait(4000)
+        cy.get('.icon_form > .ui').click()
+        cy.get('.active > .menu > :nth-child(2)').click()
+        cy.wait(4000)
+        cy.get('.icon_form > .ui').click()
+        cy.get('.active > .menu > :nth-child(3)').click()
+        cy.wait(4000)
+        cy.get('.message-actions > .tiny').click()
+        
 
     })
-  
-  })
+
+})
+

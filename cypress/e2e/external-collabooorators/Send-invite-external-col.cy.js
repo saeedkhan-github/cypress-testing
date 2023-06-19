@@ -1,3 +1,14 @@
+import { faker } from '@faker-js/faker';
+var firstname = faker.person.firstName();
+var lastname = faker.person.lastName();
+// Generate a random email address
+const randomEmail = `test${Math.floor(Math.random() * 100000)}@example.com`;
+
+// Fill the email input field with the random email address
+//cy.get('#emailInput').type(randomEmail);
+//const randomemail = Math.ran
+//var email = faker.person.email();
+ //var Phone= faker.phone.number('773#######');
 describe('My First Test', () => {
     it('click on alert',()=>{
         cy.visit('https://webapp.hucu.us/login');
@@ -25,12 +36,13 @@ describe('My First Test', () => {
         cy.get(':nth-child(6) > :nth-child(1) > .content').click()
         cy.wait(8000)
         cy.get(':nth-child(1) > .angle').click()
-        cy.get(':nth-child(1) > .list > :nth-child(3)').click()
-        cy.get(':nth-child(3) > .content > .header > .ui').click()
-        cy.get('.actions > .primary').click()
-        cy.wait(8000)
-        cy.get('.actions > .ui').click()
-
+        cy.get(':nth-child(1) > .list > :nth-child(1)').click()
+        cy.get('.add_invite_container').click()
+        cy.get(':nth-child(3) > :nth-child(1) > .field > .ui > input').type(firstname)
+        cy.get(':nth-child(3) > :nth-child(2) > .field > .ui > input').type(lastname)
+        cy.get(':nth-child(2) > :nth-child(2) > .field > .ui > input').type(randomEmail)
+        cy.get('.modal-buttons-container > .primary').click()
+        //cy.get('.actions > .primary').click()
     })
   
   })
