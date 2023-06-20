@@ -1,7 +1,5 @@
 
-// import { contains } from "cypress/types/jquery";
 import { Login } from "./Login.cy";
-require('@cypress/xpath');
 
 describe('Test Bookmark in the patient channel', () => {
     it('Bookmark a message the patient channel', () => {
@@ -9,14 +7,14 @@ describe('Test Bookmark in the patient channel', () => {
         Login();
         cy.wait(8000);
         cy.get('.search-input > .ui > input').click();
-// cy.get('.ui fluid icon input').click();
 
-cy.get('.search-input > .ui > input').type('Bookmark');
-cy.get('.patient-info').click();
-cy.get("div[class='msg_attachment_style content']").last().find('.text').rightclick().then(()=>{
+    cy.get('.search-input > .ui > input').type('Bookmark');
+    cy.get('.patient-info').click();
+    cy.get("div[class='msg_attachment_style content']").last().find('.text').rightclick().
+    then(()=>{
     cy.get('span[class="item-text bookmark"]').should('have.text',"Bookmark the Message").click();
     cy.get("div[class='msg_attachment_style content']").last().find('.bookmark-icon > .ui').should('be.visible');
-});
+        });
     // go to notification center Bookmark tab and verifiy the bookmarked message 
     cy.get('.notification-container > .ui').click();
         cy.get('.pointing > :nth-child(4)').click();
