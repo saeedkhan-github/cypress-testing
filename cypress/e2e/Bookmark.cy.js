@@ -1,11 +1,16 @@
 
 import { Login } from "./Login.cy";
+beforeEach(function() {
+
+    Login('joy','Zoha@123');
+    cy.wait(8000);
+    
+  });
 
 describe('Send a Message in the patient channel and bookmark the message, verify bookmark icon with the message in the chat', () => {
     it('Bookmark a message the patient channel', () => {
         
-        Login();
-        cy.wait(8000);
+       
         cy.get('.search-input > .ui > input').click();
 
     cy.get('.search-input > .ui > input').type('Bookmark');
@@ -32,8 +37,7 @@ describe('Send a Message in the patient channel and bookmark the message, verify
 
     it('Check the Bookmarked messaged in the right Drawer bookmark tab and remove the bookmakred message',()=>{
 
-        Login();
-        cy.wait(8000);
+       
 
         cy.get('.notification-container > .ui').click();
         cy.get('.pointing > :nth-child(4)').click();
