@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
     require('@cypress/xpath');
+    import "cypress-real-events";
     
 // ***********************************************
 // This example commands.js shows you how to
