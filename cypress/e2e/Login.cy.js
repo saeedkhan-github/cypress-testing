@@ -1,7 +1,6 @@
 const user={
     username: 'qa.test1',
-    password: 'Saeed123@',
-    pass:'123'
+    password: 'Saeed123@'
 }
 function Login(name,password){
 
