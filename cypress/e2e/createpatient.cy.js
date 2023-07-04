@@ -25,7 +25,7 @@ describe('Test Create Patient Flow', () => {
        PatientDate = `${month}/${String(birthdate.getDate()).padStart(2,'0')}/${birthdate.getFullYear()}`;
        sex =faker.person.sex();
        Phone= faker.phone.number('773#######');
-    Login();
+    Login("omar","Zoha@123");
       cy.wait(5000);
       
     });
@@ -43,7 +43,7 @@ describe('Test Create Patient Flow', () => {
           cy.get('.required:nth-child(3) input').type(PatientDate);
           cy.get('.selection').type(sex);
           cy.get('.selected').click();
-          cy.intercept("POST", "https://api.hucu.us/api/v2/entities/358/locations/1050/patients").as("apiRequest");
+          cy.intercept("POST", "https://api.hucu.us/api/v2/entities/*/locations/*/patients").as("apiRequest");
           cy.get('.blue').click();
                   cy.wait("@apiRequest").then((interception) => {
                   const response = interception.response;
@@ -72,8 +72,9 @@ describe('Test Create Patient Flow', () => {
          //  cy.get('input[name="sendInvite"]').click();
          cy.contains('label', 'Invite Patient').click();
          
-          cy.intercept("POST", "https://api.hucu.us/api/v2/entities/358/locations/1050/patients").as("apiRequest");
+          cy.intercept("POST", "https://api.hucu.us/api/v2/entities/*/locations/*/patients").as("apiRequest");
           cy.get('.blue').click();
+          cy.wait(2000);
                   cy.wait("@apiRequest").then((interception) => {
                   const response = interception.response;
                   expect(response.statusCode).to.eq(201);
@@ -98,7 +99,7 @@ describe('Test Create Patient Flow', () => {
          cy.get('.required:nth-child(3) input').type('10/10/2001');
          cy.get('.selection').click();
          cy.get('.selected').click();
-         cy.intercept("POST", "https://api.hucu.us/api/v2/entities/358/locations/1050/patients").as("apiRequest");
+         cy.intercept("POST", "https://api.hucu.us/api/v2/entities/*/locations/*/patients").as("apiRequest");
          cy.get('.blue').click();
          cy.wait("@apiRequest").then((interception) => {
             const response = interception.response;
