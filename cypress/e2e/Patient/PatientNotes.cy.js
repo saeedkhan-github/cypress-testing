@@ -20,7 +20,9 @@ describe('My First Test', () => {
         patientdrawer.PatientProfileClick();
         // cy.get("textarea[placeholder='Create Notes']").should('have.text','');
         cy.get('.pencil').click();
-        cy.get("textarea[placeholder='Create Notes']").click().clear().type("Testing Patient Notes");
+        cy.get("textarea[placeholder='Create Notes']").click().clear().then(($el)=>{
+            cy.wrap($el).should('be.empty').type("Testing Patient Notes");
+        })
         cy.get('.status-button > :nth-child(2) > .ui').click();
         cy.get('.rrt-text').should('have.text','Patient notes has been Updated successfully');
        
