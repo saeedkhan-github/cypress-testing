@@ -8,12 +8,12 @@ import { PatientDrawer } from "../PageObject/PatientDrawer";
 // //var email = faker.person.email();
 let patientdrawer = new PatientDrawer;
 
-describe('My First Test', () => {
-    it('click on alert',()=>{
+describe('Patient Notes Test', () => {
+    it('Open Patient channel and update the patient Notes',()=>{
        
        Login();
         // open any top patient channel 
-        patientdrawer.OpenPatientChannel();
+        patientdrawer.OpenPatientChannel('John Dav');
         
         cy.wait(2000);
         patientdrawer.ClickPatientDrawer();
@@ -24,7 +24,10 @@ describe('My First Test', () => {
             cy.wrap($el).should('be.empty').type("Testing Patient Notes");
         })
         cy.get('.status-button > :nth-child(2) > .ui').click();
+        //verify success message 
         cy.get('.rrt-text').should('have.text','Patient notes has been Updated successfully');
+        //verify annoucment message in the chat
+        cy.get("div[class='msg_attachment_style content']").last().find('.text').contains('updated the notes to:')
        
     })
   
