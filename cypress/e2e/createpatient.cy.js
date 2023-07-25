@@ -3,8 +3,6 @@ import { faker } from '@faker-js/faker';
 import chai from 'chai';
 import chaiDom from 'chai-dom';
 chai.use(chaiDom);
-
-// import { contains } from "cypress/types/jquery";
 import { Login } from "./Login";
 import { should } from 'chai';
      
