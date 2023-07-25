@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import { Login } from "../Login/Login.cy";
+import { Login } from "../Login/Login";
 
     describe("Bookmark Functionality", () => {
         it("should bookmark the message if it contains 'bookmark' and run second statement", () => {

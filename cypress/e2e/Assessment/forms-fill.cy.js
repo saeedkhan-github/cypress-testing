@@ -1,5 +1,5 @@
 import "../Login.cy"
-import { Login } from "../Login.cy"
+import { Login } from "../Login"
 
 describe('My First Test', () => {
     it('click on alert',()=>{
