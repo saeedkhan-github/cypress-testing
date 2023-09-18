@@ -11,6 +11,11 @@ module.exports = defineConfig({
     json: true,
     reportDir: 'cyress/reports/mocha',
   },
+  env:{
+    username:'sq.test1',
+    password:'Saeed123@'
+
+  },
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
     projectId:"gdhvo4",

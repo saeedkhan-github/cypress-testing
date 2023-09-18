@@ -1,6 +1,6 @@
 
 import { Login } from "./Login";
-beforeEach(function() {
+before(function() {
 
     Login('joy','Zoha@123');
     cy.wait(8000);
@@ -38,7 +38,8 @@ describe('Send a Message in the patient channel and bookmark the message, verify
     it('Check the Bookmarked messaged in the right Drawer bookmark tab and remove the bookmakred message',()=>{
 
        
-
+        cy.wait(10000);
+        cy.visit('https://webapp.hucu.us/chat/locations/1050');
         cy.get('.notification-container > .ui').click();
         cy.get('.pointing > :nth-child(4)').click();
         cy.get('#messagesList > .comments > :nth-child(1) > .msg_attachment_style > .text > div').should('have.text','testing message bookmarkd');
