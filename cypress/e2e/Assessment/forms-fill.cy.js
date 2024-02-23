@@ -8,11 +8,13 @@ describe('Test Assessment Form', () => {
        
         // cy.get('.icon > input').type('Zoha@123');
         
-        cy.wait(10000)
+        cy.wait(1000)/
+
 
         //Send Assessment
         cy.get(':nth-child(5) > :nth-child(1) > .content').click()
         cy.wait(4000)
+        cy.inttercept();
         cy.get('.icon_form > .ui').click()
         cy.get('.active > .menu > :nth-child(2)').click()
         cy.wait(2000)
