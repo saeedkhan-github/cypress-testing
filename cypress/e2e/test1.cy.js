@@ -1,15 +1,10 @@
-describe('Testing app',function(){
+describe('Testing Wordle App',function(){
 
-    it('sample app testing',()=>{
+    it('My Test',()=>{
 
-        cy.visit('https://react-redux.realworld.io/#/login?_k=ueer3x');
-        cy.title().should('eq','Conduit');
-        cy.get('input[type="email"]').type('saeedullah321@gmail.com')
-        cy.get('input[type="password"]').type('Saeed123@');
-        cy.get('button[class="btn btn-lg btn-primary pull-xs-right"]').click();
-    })
-
-    it('Post a new Post',()=>{
-        cy.contains('New Post').click();
+        cy.visit('https://wordplay.com/');
+        cy.wait(5000);
+        cy.window().trigger('keydown',{key:'A'});
+       
     })
 })

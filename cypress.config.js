@@ -11,6 +11,7 @@ module.exports = defineConfig({
     json: true,
     reportDir: 'cyress/reports/mocha',
   },
+  "includeShadowDom":true,
   env:{
     username:'sq.test1',
     password:'Saeed123@'
