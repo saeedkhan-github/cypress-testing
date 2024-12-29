@@ -10,7 +10,8 @@ describe('Select dynamic Value in the Select Inputbox',()=>{
                 cy.wrap(el).click();
             }
         })
-        cy.get('[for="radio2"]').click();
+        // cy.get('[for="radio2"]').check();
+        cy.get('[for="radio2"] > .radioButton').check();
      
     })
 })

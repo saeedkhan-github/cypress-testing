@@ -8,7 +8,7 @@
     "test-dashboard": "npx cypress run --record --key 272007a3-67aa-42bc-b551-7bf7f09d0d76"
   },
   "keywords": [],
-  "author": "zoha",
+  "author": "Saeed Khan",
   "license": "ISC",
   "dependencies": {
     "cypress-real-events": "^1.8.1",
@@ -21,10 +21,14 @@
     "@faker-js/faker": "^8.0.1",
     "chai": "^4.3.7",
     "chai-dom": "^1.11.0",
-    "cypress": "^12.14.0",
+    "cypress": "^13.12.0",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "faker": "^5.5.3",
+    "fs": "^0.0.1-security",
+    "loadash": "^1.0.0",
+    "path": "^0.12.7"
   },
   "description": ""
 }

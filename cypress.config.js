@@ -11,6 +11,12 @@ module.exports = defineConfig({
     json: true,
     reportDir: 'cyress/reports/mocha',
   },
+  component: {
+    devServer: {
+      framework: 'create-react-app',
+      bundler: 'webpack',
+    },
+  },
   "includeShadowDom":true,
   env:{
     username:'sq.test1',
@@ -27,6 +33,10 @@ module.exports = defineConfig({
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false,
+      blockHosts:['pagead2.googlesyndication.com','googleads.g.doubleclick.net/','googleads.g.doubleclick.net/'
+
+
+    ]
     },
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
